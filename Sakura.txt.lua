@@ -15,9 +15,7 @@ local player = LocalPlayer
 local plr = LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 -- tạo UI
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua"))()
-local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/ThemeManager.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/SaveManager.lua"))()
+Local Fluent = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
 local Window = Fluent:CreateWindow({
     Title = "Sakura Hub On Top",
@@ -67,7 +65,8 @@ local Tabs = {
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "map" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" })
 }
--- 🧩 Hàm xác định nhiệm vụ farm theo level
+
+-- 🧩 Hàm xác định nhiệm vụ farm theo level
 function CheckQuest()
     local MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
 
@@ -713,6 +712,7 @@ function CheckQuest()
 			NameMon = "Grand Devotee";
 			CFrameQuest = CFrame.new( 9639.39, -1992.45, 9617.28);
 			CFrameMon = CFrame.new( 9582.31, -1993.47, 9829.67);
+
         end
     end
 end
