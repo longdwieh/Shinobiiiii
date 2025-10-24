@@ -15,9 +15,9 @@ local player = LocalPlayer
 local plr = LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 -- tạo UI
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua"))()
+local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/ThemeManager.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/SaveManager.lua"))()
 
 local Window = Fluent:CreateWindow({
     Title = "Sakura Hub On Top",
@@ -34,6 +34,17 @@ local colors = {
     Color3.fromRGB(0, 170, 255),   -- xanh dương
     Color3.fromRGB(255, 100, 200), -- hồng
     Color3.fromRGB(0, 255, 150)    -- xanh lá
+    -- Avatar Display | By Sakura
+local AvatarImage = Instance.new("ImageLabel")
+AvatarImage.Size = UDim2.new(0, 150, 0, 150)
+AvatarImage.Position = UDim2.new(0.5, -75, 0.5, -75)
+AvatarImage.AnchorPoint = Vector2.new(0.5, 0.5)
+AvatarImage.BackgroundTransparency = 1
+AvatarImage.Image = "rbxassetid://14759368201"
+AvatarImage.Parent = game:GetService("CoreGui")
+
+local UICorner = Instance.new("UICorner", AvatarImage)
+UICorner.CornerRadius = UDim.new(0, 100)
 }
 
 task.spawn(function()
@@ -712,6 +723,13 @@ Tabs.Farm:AddToggle({
     Default = false,
     Callback = function(Value)
         _G.AutoFarmLevel = Value
+        if Value then
+            print("Bật auto farm")
+        else
+            print("Tắt auto farm")
+        end
+    end
+})
 
         task.spawn(function()
             while _G.AutoFarmLevel do
