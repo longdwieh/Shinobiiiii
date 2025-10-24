@@ -38,7 +38,7 @@ AvatarImage.Size = UDim2.new(0, 150, 0, 150)
 AvatarImage.Position = UDim2.new(0.5, -75, 0.5, -75)
 AvatarImage.AnchorPoint = Vector2.new(0.5, 0.5)
 AvatarImage.BackgroundTransparency = 1
-AvatarImage.Image = "rbxassetid://14759368201"
+AvatarImage.Image = "rbxassetid://116231965107271"
 AvatarImage.Parent = game:GetService("CoreGui")
 
 local UICorner = Instance.new("UICorner", AvatarImage)
@@ -762,3 +762,4 @@ Tabs.Farm:AddToggle({
         end)
     end
 })
+
