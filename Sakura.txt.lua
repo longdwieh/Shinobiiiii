@@ -15,8 +15,10 @@ local player = LocalPlayer
 local plr = LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 -- tạo UI
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
-local Window = OrionLib:MakeWindow({
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
     Name = "Sakura Hub | Blox Fruits",
     HidePremium = false,
     SaveConfig = true,
@@ -767,5 +769,6 @@ Tabs.Farm:AddToggle({
         end)
     end
 })
+
 
 
